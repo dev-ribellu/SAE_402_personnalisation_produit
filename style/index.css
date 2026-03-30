@@ -1,0 +1,69 @@
+/* Définition des couleurs principales selon la charte graphique */
+:root {
+    --noir-encre: #1A1A1A;
+    --bleu-celadon: #7BA7A0;
+    --blanc-washi: #F5F0E8;
+    --or-laque: #C9A84C;
+    --rouge-cinabre: #C0392B;
+}
+
+/* Application des couleurs principales */
+body {
+    background-color: var(--blanc-washi);
+    color: var(--noir-encre);
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Futura', sans-serif;
+    color: var(--noir-encre);
+}
+
+/* Styles pour les accroches */
+.accent {
+    font-family: 'Optima Bold', sans-serif;
+    font-style: italic;
+    color: var(--bleu-celadon);
+}
+
+/* Boutons et Call-to-Actions */
+button, .cta {
+    background-color: var(--or-laque);
+    color: var(--blanc-washi);
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .cta:hover {
+    background-color: var(--bleu-celadon);
+}
+
+/* Détails forts et alertes */
+.alert {
+    color: var(--rouge-cinabre);
+    font-weight: bold;
+}
+
+/* Légendes */
+.caption {
+    font-family: 'Futura Light', sans-serif;
+    color: var(--bleu-celadon);
+    font-size: 0.9em;
+}
+
+/* Liens */
+a {
+    color: var(--bleu-celadon);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--or-laque);
+}
