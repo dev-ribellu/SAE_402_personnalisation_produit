@@ -4,203 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personnalisation de T-shirt - Bî You</title>
-    <style>
-        /* CHARTE GRAPHIQUE */
-        body {
-            background-color: #F5F0E8; /* Blanc washi */
-            color: #1A1A1A; /* Noir d'encre */
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        h1 {
-            font-family: 'Futura', sans-serif;
-            margin-bottom: 20px;
-        }
-
-        .product-container {
-            position: relative;
-            width: 300px;
-            height: 400px;
-            margin-bottom: 20px;
-        }
-
-        .product-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-container svg {
-            position: absolute;
-            top: -14px;
-            left: -10px;
-            width: 107%;
-            height: 107%;
-            pointer-events: none;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-            mix-blend-mode: multiply;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .controls button {
-            background-color: #C9A84C; /* Or de laque */
-            color: #F5F0E8; /* Blanc washi */
-            border: none;
-            padding: 10px 20px;
-            font-family: 'Futura', sans-serif;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .controls button:hover {
-            background-color: #7BA7A0; /* Bleu céladon */
-        }
-
-        .color-palette {
-            display: flex;
-            gap: 10px;
-        }
-
-        .color-palette div {
-            width: 30px;
-            height: 30px;
-            border: 2px solid transparent;
-            cursor: pointer;
-        }
-
-        .color-palette div.active {
-            border-color: #1A1A1A; /* Noir d'encre */
-        }
-
-        .opacity-slider {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .add-to-cart {
-            margin-top: 20px;
-            background-color: #1A1A1A; /* Noir d'encre */
-            color: #F5F0E8; /* Blanc washi */
-            border: none;
-            padding: 15px 30px;
-            font-family: 'Futura', sans-serif;
-            cursor: pointer;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .add-to-cart:hover {
-            background-color: #C9A84C; /* Or de laque */
-        }
-    </style>
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
-    <h1>Personnalisez votre pièce</h1>
+    <div class="page-layout">
+        <!-- 1. BARRE DE NAVIGATION (GAUCHE) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>Bî You</span>
+            </div>
 
-    <!-- ZONE PRODUIT -->
-    <div class="product-container">
-        <img id="product-image" src="assets/test_svg/Teeshirt_face-02_Plan de travail 1.png" alt="T-shirt face">
-        <svg id="product-svg"></svg>
+            <nav class="main-nav">
+                <a href="#" class="nav-item active">Accueil</a>
+                <a href="#" class="nav-item">T‑shirts</a>
+                <a href="#" class="nav-item">Sweats</a>
+                <a href="#" class="nav-item">Pantalons</a>
+                <a href="#" class="nav-item">Accessoires</a>
+            </nav>
+        </aside>
+
+        <!-- CONTENU PRINCIPAL (CENTRE + DROITE) -->
+        <main class="main-content">
+            <!-- 2. ZONE CENTRALE – APERÇU DU VÊTEMENT -->
+            <section class="preview-section">
+                <h1>Personnalisez votre pièce</h1>
+
+                <div class="product-preview-wrapper">
+                    <!-- Zone produit (mockup + SVG + stickers) -->
+                    <div class="product-clip">
+                        <div class="product-container">
+                            <img id="product-image"
+                                 src="assets/test_svg/Teeshirt_face-02_Plan de travail 1.png"
+                                 alt="T-shirt face">
+                            <svg id="product-svg"></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boutons FACE / DOS sous l’image -->
+                <div class="view-toggle">
+                    <button id="btn-face">Face</button>
+                    <button id="btn-dos">Dos</button>
+                </div>
+            </section>
+
+            <!-- 3. ZONE DROITE – CONFIGURATION -->
+            <aside class="config-panel">
+                <!-- a. Informations produit -->
+                <section class="product-info">
+                    <div class="brand-name">Bî You</div>
+                    <h2 class="product-name">T‑shirt oversize unisexe</h2>
+                    <p class="product-description">
+                        T‑shirt oversize 100&nbsp;% coton bio, coupe mixte.
+                        Personnalisez la couleur et ajoutez vos stickers pour créer une pièce unique.
+                    </p>
+                </section>
+
+                <!-- b. Choix des couleurs -->
+                <section class="config-section">
+                    <h3>Couleurs</h3>
+                    <div class="color-palette">
+                        <div class="color" data-color="#1A1A1A" style="background-color:#1A1A1A;"></div>
+                        <div class="color" data-color="#7BA7A0" style="background-color:#7BA7A0;"></div>
+                        <div class="color" data-color="#F5F0E8" style="background-color:#F5F0E8;"></div>
+                        <div class="color" data-color="#C9A84C" style="background-color:#C9A84C;"></div>
+                        <div class="color" data-color="#C0392B" style="background-color:#C0392B;"></div>
+                    </div>
+                </section>
+
+                <!-- Slider d'opacité lié à la couleur -->
+                <section class="config-section">
+                    <h3>Opacité</h3>
+                    <div class="opacity-slider">
+                        <label for="opacity">Opacité du motif</label>
+                        <input id="opacity" type="range" min="0.1" max="1" step="0.1" value="1">
+                    </div>
+                </section>
+
+                <!-- c. Stickers -->
+                <section class="config-section">
+                    <h3>Stickers</h3>
+                    <div class="stickers-panel">
+                        <div class="stickers-list">
+                            <!-- Vignettes de stickers (utilisées par sticker.js) -->
+                            <img src="assets/stickers/Fichier 1.png"
+                                 class="sticker-thumb"
+                                 data-sticker-src="assets/stickers/Fichier 1.png"
+                                 alt="Sticker 1">
+                            <img src="assets/stickers/Fichier 2.png"
+                            class="sticker-thumb"
+                            data-sticker-src="assets/stickers/Fichier 2.png"
+                            alt="Sticker 2">
+                            <img src="assets/stickers/Fichier 4.png"
+                                 class="sticker-thumb"
+                                 data-sticker-src="assets/stickers/Fichier 4.png"
+                                 alt="Sticker 4">
+                            <img src="assets/stickers/Fichier 5.png"
+                                 class="sticker-thumb"
+                                 data-sticker-src="assets/stickers/Fichier 5.png"
+                                 alt="Sticker 5">
+                            <img src="assets/stickers/Fichier 6.png"
+                                 class="sticker-thumb"
+                                 data-sticker-src="assets/stickers/Fichier 6.png"
+                                 alt="Sticker 6">
+                            
+                        </div>
+                    </div>
+
+                    <!-- Boutons gestion des stickers -->
+                    <div class="sticker-actions">
+                        <button id="reset-stickers" class="btn-secondary">
+                            Réinitialiser les stickers
+                        </button>
+                        <button id="delete-sticker" class="btn-icon" title="Supprimer le sticker sélectionné">
+                            🗑
+                        </button>
+                    </div>
+                </section>
+                </section>
+
+                <!-- Bouton Ajouter au panier -->
+                <section class="config-section">
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </section>
+            </aside>
+        </main>
     </div>
 
-    <!-- PANNEAU DE CONTRÔLE -->
-    <div class="controls">
-        <!-- Boutons Face/Dos -->
-        <div>
-            <button id="btn-face">Face</button>
-            <button id="btn-dos">Dos</button>
-        </div>
-
-        <!-- Palette de couleurs -->
-        <div class="color-palette">
-            <div class="color" data-color="#1A1A1A" style="background-color: #1A1A1A;"></div>
-            <div class="color" data-color="#7BA7A0" style="background-color: #7BA7A0;"></div>
-            <div class="color" data-color="#F5F0E8" style="background-color: #F5F0E8;"></div>
-            <div class="color" data-color="#C9A84C" style="background-color: #C9A84C;"></div>
-            <div class="color" data-color="#C0392B" style="background-color: #C0392B;"></div>
-        </div>
-
-        <!-- Slider d'opacité -->
-        <div class="opacity-slider">
-            <label for="opacity">Opacité</label>
-            <input id="opacity" type="range" min="0.1" max="1" step="0.1" value="1">
-        </div>
-    </div>
-
-    <!-- Bouton Ajouter au panier -->
-    <button class="add-to-cart">Ajouter au panier</button>
-
-    <script>
-        // VARIABLES GLOBALES
-        const productImage = document.getElementById('product-image');
-        const productSvg = document.getElementById('product-svg');
-        const btnFace = document.getElementById('btn-face');
-        const btnDos = document.getElementById('btn-dos');
-        const colorPalette = document.querySelectorAll('.color');
-        const opacitySlider = document.getElementById('opacity');
-
-        let currentColor = '#1A1A1A'; // Couleur par défaut
-
-        // CHARGEMENT DU SVG
-        function loadSvg(url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    productSvg.innerHTML = data;
-                    applyColorAndOpacity();
-                });
-        }
-
-        // APPLIQUER LA COULEUR ET L'OPACITÉ
-        function applyColorAndOpacity() {
-            const elements = productSvg.querySelectorAll('path, rect, circle, polygon');
-            elements.forEach(el => {
-                el.style.fill = currentColor;
-                el.style.opacity = opacitySlider.value;
-            });
-        }
-
-        // SWITCH FACE/DOS
-        btnFace.addEventListener('click', () => {
-            productImage.src = 'assets/test_svg/Teeshirt_face-02_Plan de travail 1.png';
-            loadSvg('assets/test_svg/svg_face_Plan de travail 1.svg');
-        });
-
-        btnDos.addEventListener('click', () => {
-            productImage.src = 'assets/test_svg/Teeshirt_dos-02.png';
-            loadSvg('assets/test_svg/svg_dos_Plan de travail 1-02.svg');
-        });
-
-        // CHANGER LA COULEUR
-        colorPalette.forEach(colorDiv => {
-            colorDiv.addEventListener('click', () => {
-                currentColor = colorDiv.dataset.color;
-                colorPalette.forEach(div => div.classList.remove('active'));
-                colorDiv.classList.add('active');
-                applyColorAndOpacity();
-            });
-        });
-
-        // AJUSTER L'OPACITÉ
-        opacitySlider.addEventListener('input', applyColorAndOpacity);
-
-        // CHARGEMENT INITIAL
-        loadSvg('assets/test_svg/svg_face_Plan de travail 1.svg');
-    </script>
+    <!-- Scripts -->
+    <script src="script/color.js"></script>
+    <script src="script/sticker.js"></script>
 </body>
 </html>

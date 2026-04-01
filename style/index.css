@@ -1,4 +1,6 @@
-/* Définition des couleurs principales selon la charte graphique */
+/* ===========================
+   VARIABLES / CHARTE
+   =========================== */
 :root {
     --noir-encre: #1A1A1A;
     --bleu-celadon: #7BA7A0;
@@ -7,57 +9,29 @@
     --rouge-cinabre: #C0392B;
 }
 
-/* Application des couleurs principales */
+/* ===========================
+   BASE
+   =========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: var(--blanc-washi);
-    color: var(--noir-encre);
-    font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
+    background-color: var(--blanc-washi);
+    color: var(--noir-encre);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Futura', system-ui, sans-serif;
     color: var(--noir-encre);
+    margin: 0;
 }
 
-/* Styles pour les accroches */
-.accent {
-    font-family: 'Optima Bold', sans-serif;
-    font-style: italic;
-    color: var(--bleu-celadon);
-}
-
-/* Boutons et Call-to-Actions */
-button, .cta {
-    background-color: var(--or-laque);
-    color: var(--blanc-washi);
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Futura', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover, .cta:hover {
-    background-color: var(--bleu-celadon);
-}
-
-/* Détails forts et alertes */
-.alert {
-    color: var(--rouge-cinabre);
-    font-weight: bold;
-}
-
-/* Légendes */
-.caption {
-    font-family: 'Futura Light', sans-serif;
-    color: var(--bleu-celadon);
-    font-size: 0.9em;
-}
-
-/* Liens */
 a {
     color: var(--bleu-celadon);
     text-decoration: none;
@@ -66,4 +40,333 @@ a {
 
 a:hover {
     color: var(--or-laque);
+}
+
+/* ===========================
+   LAYOUT GLOBAL
+   =========================== */
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar gauche */
+.sidebar {
+    width: 220px;
+    border-right: 1px solid #e5e5e5;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: #ffffff;
+}
+
+.logo {
+    font-size: 18px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Navigation principale */
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.main-nav .nav-item {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #444;
+    padding: 6px 0;
+}
+
+.main-nav .nav-item.active {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Contenu principal : zone centrale + panneau droit */
+.main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1.1fr);
+    gap: 48px;
+    padding: 32px 48px;
+}
+
+/* ===========================
+   ZONE CENTRALE – APERÇU
+   =========================== */
+.preview-section h1 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.product-preview-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Conteneur mockup + stickers */
+.product-container {
+    position: relative;
+    max-width: 420px;
+}
+
+/* Image du vêtement */
+#product-image {
+    width: 100%;
+    display: block;
+}
+
+/* SVG superposé */
+#product-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: multiply;
+}
+
+/* Boutons FACE / DOS */
+.view-toggle {
+    display: inline-flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.view-toggle button {
+    padding: 8px 18px;
+    border: 1px solid #111;
+    background-color: #fff;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 999px; /* pilule */
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.view-toggle button:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* ===========================
+   PANNEAU DROIT – CONFIG
+   =========================== */
+.config-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 13px;
+}
+
+/* a. Informations produit */
+.product-info .brand-name {
+    font-size: 11px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.product-info .product-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.product-info .product-description {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Sections de config */
+.config-section {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 18px;
+}
+
+.config-section h3 {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* b. Choix des couleurs */
+.color-palette {
+    display: flex;
+    gap: 8px;
+}
+
+.color-palette .color {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.color-palette .color.active,
+.color-palette .color:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 1px #000;
+    border-color: #000;
+}
+
+/* c. Opacité */
+.opacity-slider label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.opacity-slider input[type="range"] {
+    width: 100%;
+}
+
+/* ===========================
+   STICKERS
+   =========================== */
+.stickers-panel {
+    overflow-x: auto;
+}
+
+.stickers-list {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Vignettes petites (mini icônes) */
+.sticker-thumb {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 4px;
+    background-color: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.sticker-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 1px #000;
+    border-color: #000;
+}
+
+/* Stickers placés sur le vêtement */
+.sticker-instance img {
+    display: block;
+}
+
+/* Poignée de redimensionnement (gérée par JS, on ne redéfinit que le style) */
+.sticker-resize-handle {
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+/* ===========================
+   BOUTON "AJOUTER AU PANIER"
+   =========================== */
+.add-to-cart {
+    width: 100%;
+    padding: 10px 18px;
+    border: 1px solid #111;
+    background-color: #111;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #fff;
+    color: #111;
+}
+.sticker-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    padding: 6px 14px;
+    border: 1px solid #111;
+    background-color: #fff;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid #111;
+    background-color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-icon:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Visuel de sélection du sticker actif */
+.sticker-instance.selected {
+    outline: 2px dashed #111;
+    outline-offset: 2px;
+}
+.product-clip {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* coupe les stickers qui dépassent */
+}
+
+/* Conteneur mockup + stickers */
+.product-container {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
 }
