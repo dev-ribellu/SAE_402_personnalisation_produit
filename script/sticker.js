@@ -2,11 +2,12 @@
 
 (function () {
     const productContainer = document.querySelector('.product-container');
+    const productSvg = document.getElementById('product-svg'); // <== ajouté
     const stickerThumbs = document.querySelectorAll('.sticker-thumb');
     const resetBtn = document.getElementById('reset-stickers');
     const deleteBtn = document.getElementById('delete-sticker');
 
-    if (!productContainer || stickerThumbs.length === 0) return;
+    if (!productContainer || !productSvg || stickerThumbs.length === 0) return;
 
     let currentZIndex = 10;
     let selectedSticker = null; // sticker actuellement sélectionné
@@ -83,24 +84,32 @@
     function makeDraggable(element) {
         let isDragging = false;
         let startX, startY, startLeft, startTop;
-        let parentRect, stickerRect;
+        let svgRect, containerRect, stickerRect;
 
         element.addEventListener('mousedown', (e) => {
             if (e.target.classList.contains('sticker-resize-handle')) return;
+
             isDragging = true;
             element.style.zIndex = currentZIndex++;
+
+            // rectangles en pixels de la page
             stickerRect = element.getBoundingClientRect();
-            parentRect = productContainer.getBoundingClientRect();
+            containerRect = productContainer.getBoundingClientRect();
+            svgRect = productSvg.getBoundingClientRect();
+
             startX = e.clientX;
             startY = e.clientY;
-            startLeft = stickerRect.left - parentRect.left;
-            startTop = stickerRect.top - parentRect.top;
+            // position actuelle du sticker par rapport au container
+            startLeft = stickerRect.left - containerRect.left;
+            startTop = stickerRect.top - containerRect.top;
+
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
         });
 
         function onMouseMove(e) {
             if (!isDragging) return;
+
             const dx = e.clientX - startX;
             const dy = e.clientY - startY;
 
@@ -109,12 +118,19 @@
 
             const width = element.offsetWidth;
             const height = element.offsetHeight;
-            const maxLeft = parentRect.width - width;
-            const maxTop = parentRect.height - height;
 
-            // empêche de sortir du conteneur
-            newLeft = Math.max(0, Math.min(newLeft, maxLeft));
-            newTop = Math.max(0, Math.min(newTop, maxTop));
+            // limites du SVG dans le repère du container
+            const svgLeftInContainer = svgRect.left - containerRect.left;
+            const svgTopInContainer = svgRect.top - containerRect.top;
+            const svgRightInContainer = svgLeftInContainer + svgRect.width;
+            const svgBottomInContainer = svgTopInContainer + svgRect.height;
+
+            const maxLeft = svgRightInContainer - width;
+            const maxTop = svgBottomInContainer - height;
+
+            // clamp pour rester à l’intérieur de la zone SVG
+            newLeft = Math.max(svgLeftInContainer, Math.min(newLeft, maxLeft));
+            newTop = Math.max(svgTopInContainer, Math.min(newTop, maxTop));
 
             element.style.left = newLeft + 'px';
             element.style.top = newTop + 'px';
@@ -132,12 +148,18 @@
     function makeResizable(wrapper, img, handle) {
         let isResizing = false;
         let startX, startWidth;
+        let svgRect, containerRect, wrapperRect;
 
         handle.addEventListener('mousedown', (e) => {
             e.stopPropagation();
             isResizing = true;
             startX = e.clientX;
             startWidth = img.getBoundingClientRect().width;
+
+            containerRect = productContainer.getBoundingClientRect();
+            svgRect = productSvg.getBoundingClientRect();
+            wrapperRect = wrapper.getBoundingClientRect();
+
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
         });
@@ -145,7 +167,27 @@
         function onMouseMove(e) {
             if (!isResizing) return;
             const dx = e.clientX - startX;
-            const newWidth = Math.max(30, startWidth + dx);
+            let newWidth = Math.max(30, startWidth + dx);
+
+            // empêcher que le sticker dépasse trop du SVG vers la droite/bas
+            const leftInContainer = wrapperRect.left - containerRect.left;
+            const topInContainer = wrapperRect.top - containerRect.top;
+
+            const svgLeftInContainer = svgRect.left - containerRect.left;
+            const svgTopInContainer = svgRect.top - containerRect.top;
+            const svgRightInContainer = svgLeftInContainer + svgRect.width;
+            const svgBottomInContainer = svgTopInContainer + svgRect.height;
+
+            const maxWidthRight = svgRightInContainer - leftInContainer;
+            const maxHeightBottom = svgBottomInContainer - topInContainer;
+
+            // on prend le plus petit des deux pour rester dans la boîte
+            const maxWidth = Math.min(maxWidthRight, maxHeightBottom);
+
+            if (newWidth > maxWidth) {
+                newWidth = maxWidth;
+            }
+
             img.style.width = newWidth + 'px';
         }
 
