@@ -1,0 +1,249 @@
+/* ============ HOME (style “Zara-like”) ============ */
+    .home-main {
+      flex: 1;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* On ne veut pas le grid 2 colonnes de .main-content ici */
+    .home-wrap {
+      padding: 32px 48px;
+    }
+
+    .home-section {
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .home-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 24px;
+      align-items: stretch;
+      padding: 32px 48px;
+      position: relative;
+    }
+
+    .home-hero__left,
+    .home-hero__right {
+      display: grid;
+      gap: 16px;
+      height: calc(100vh - 64px);
+      min-height: 540px;
+    }
+
+    .home-hero__left {
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .home-hero__right {
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .home-card {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      cursor: pointer;
+      transform: translateZ(0);
+    }
+
+    .home-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+      transition: transform 500ms ease, filter 500ms ease;
+      will-change: transform;
+    }
+
+    .home-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+      opacity: 0;
+      transition: opacity 350ms ease;
+      pointer-events: none;
+    }
+
+    .home-card:hover img {
+      transform: scale(1.08);
+      filter: contrast(1.05);
+    }
+    .home-card:hover::after {
+      opacity: 1;
+    }
+
+    .home-card__label {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 350ms ease, transform 350ms ease;
+      user-select: none;
+      pointer-events: none;
+    }
+    .home-card:hover .home-card__label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Logo centré (milieu de la 1ère section) */
+    .home-hero__logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(0,0,0,0.10);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .home-hero__logo h1 {
+      font-size: 26px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    .home-hero__logo p {
+      margin: 8px 0 0 0;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    /* CTA "scroll" */
+    .home-scrollHint {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.75);
+      padding: 8px 12px;
+      cursor: pointer;
+      user-select: none;
+      text-decoration: none;
+      color: #111;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+    .home-scrollHint span {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid rgba(0,0,0,0.35);
+      border-radius: 999px;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-scrollHint span::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 4px;
+      width: 2px;
+      height: 6px;
+      background: #111;
+      transform: translateX(-50%);
+      animation: homeWheel 1.2s ease-in-out infinite;
+      opacity: 0.9;
+    }
+    @keyframes homeWheel {
+      0% { transform: translate(-50%, 0); opacity: 0.2; }
+      40% { opacity: 0.9; }
+      100% { transform: translate(-50%, 8px); opacity: 0.2; }
+    }
+
+    /* Section marque */
+    .home-brand {
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .home-brand h2 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 14px 0;
+    }
+
+    .home-brand p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #333;
+      margin: 0 0 12px 0;
+      max-width: 56ch;
+    }
+
+    .home-brand__images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .home-brand__images .home-card {
+      height: 320px;
+    }
+
+    /* Reveal au scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Parallax léger (piloté par JS) */
+    .parallax {
+      transform: translateY(var(--parallaxY, 0px));
+      will-change: transform;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .home-hero {
+        grid-template-columns: 1fr;
+        padding: 24px 18px;
+      }
+      .home-hero__left,
+      .home-hero__right {
+        height: auto;
+        min-height: auto;
+      }
+      .home-brand {
+        grid-template-columns: 1fr;
+        padding: 40px 18px;
+      }
+      .home-brand__images .home-card {
+        height: 240px;
+      }
+      .home-wrap { padding: 0; }
+      .home-hero__logo h1 { font-size: 22px; }
+    }

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bî You — Accueil</title>
+
+  <!-- On réutilise ta charte + navbar -->
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/home.css" />
+
+  
+</head>
+
+<body>
+  <div class="page-layout">
+    <!-- NAV BAR GAUCHE (conservée) -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>Bî You</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="home.html" class="nav-item active">Accueil</a>
+            <a href="index.html" class="nav-item">Personnalisation</a>
+            <a href="actions.html" class="nav-item">Nos actions</a>
+            <a href="fb.html" class="nav-item">Fabienne Verdier</a>
+            <a href="#" class="nav-item">Accessoires</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENU HOME -->
+    <main class="home-main">
+      <!-- SECTION 1 : HERO grandes images + logo centré -->
+      <section class="home-hero home-section" id="top">
+        <div class="home-hero__left">
+          <figure class="home-card reveal parallax" data-parallax="0.18">
+            <img src="assets/home/hero-1.png" alt="Lookbook 1" loading="eager">
+            <figcaption class="home-card__label">Nouveautés</figcaption>
+          </figure>
+
+          <figure class="home-card reveal parallax" data-parallax="0.10">
+            <img src="assets/home/hero-2.png" alt="Lookbook 2" loading="lazy">
+            <figcaption class="home-card__label">Essentiels</figcaption>
+          </figure>
+        </div>
+
+        <div class="home-hero__right">
+          <figure class="home-card reveal parallax" data-parallax="0.14">
+            <img src="assets/home/hero-3.png" alt="Détail matière" loading="lazy">
+            <figcaption class="home-card__label">Matières</figcaption>
+          </figure>
+
+          <figure class="home-card reveal parallax" data-parallax="0.22">
+            <img src="assets/home/hero-4.jpg" alt="Silhouette" loading="lazy">
+            <figcaption class="home-card__label">Silhouettes</figcaption>
+          </figure>
+
+          <figure class="home-card reveal parallax" data-parallax="0.12">
+            <img src="assets/home/hero-5.webp" alt="Atelier" loading="lazy">
+            <figcaption class="home-card__label">Atelier</figcaption>
+          </figure>
+        </div>
+
+        <div class="home-hero__logo reveal">
+          <h1>Bî You</h1>
+          <p>Minimal • Personnalisable • Intemporel</p>
+        </div>
+
+        <a class="home-scrollHint" href="#brand" aria-label="Aller à la section marque">
+          <span aria-hidden="true"></span>
+          Découvrir
+        </a>
+      </section>
+
+      <!-- SECTION 2 : marque + images -->
+      <section class="home-brand home-section" id="brand">
+        <div class="reveal">
+          <h2>La marque</h2>
+          <p>
+            Bî You explore une garde‑robe essentielle, pensée pour durer et se transformer.
+            Chaque pièce se veut simple, nette, et ouverte à la personnalisation.
+          </p>
+          <p>
+            Couleurs, motifs, détails : l’idée est de créer un vêtement qui te ressemble,
+            sans perdre l’élégance d’une ligne minimaliste.
+          </p>
+          <p>
+            <a href="index.html">Accéder à la personnalisation →</a>
+          </p>
+        </div>
+
+        <div class="home-brand__images">
+          <figure class="home-card reveal parallax" data-parallax="0.10">
+            <img src="assets/home/fb.png" alt="Inspiration" loading="lazy">
+            <figcaption class="home-card__label">Inspiration</figcaption>
+          </figure>
+
+          <figure class="home-card reveal parallax" data-parallax="0.16">
+            <img src="assets/home/image.png" alt="Détails" loading="lazy">
+            <figcaption class="home-card__label">Détails</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  
+  <script src="script/home.js"></script>
+</body>
+</html>

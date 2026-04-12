@@ -242,6 +242,13 @@ a:hover {
 .opacity-slider input[type="range"] {
     width: 100%;
 }
+#product-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: #fff;
+    font-size: 12px;
+}
 
 /* ===========================
    STICKERS
@@ -283,6 +290,21 @@ a:hover {
 .sticker-resize-handle {
     border-radius: 50%;
     background-color: #fff;
+}
+.motifs-list {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.motif-thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
 }
 
 /* ===========================

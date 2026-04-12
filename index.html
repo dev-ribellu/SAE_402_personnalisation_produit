@@ -1,139 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personnalisation de T-shirt - Bî You</title>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/index.css" />
 </head>
 <body>
-    <div class="page-layout">
-        <!-- 1. BARRE DE NAVIGATION (GAUCHE) -->
-        <aside class="sidebar">
-            <div class="logo">
-                <span>Bî You</span>
-            </div>
+<div class="page-layout">
+    <!-- 1. BARRE DE NAVIGATION (GAUCHE) -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>Bî You</span>
+        </div>
 
-            <nav class="main-nav">
-                <a href="#" class="nav-item active">Accueil</a>
-                <a href="#" class="nav-item">T‑shirts</a>
-                <a href="#" class="nav-item">Sweats</a>
-                <a href="#" class="nav-item">Pantalons</a>
-                <a href="#" class="nav-item">Accessoires</a>
-            </nav>
-        </aside>
+        <nav class="main-nav">
+            <a href="home.html" class="nav-item active">Accueil</a>
+            <a href="index.html" class="nav-item">Personnalisation</a>
+            <a href="actions.html" class="nav-item">Nos actions</a>
+            <a href="fb.html" class="nav-item">Fabienne Verdier</a>
+            <a href="#" class="nav-item">Accessoires</a>
+        </nav>
+    </aside>
 
-        <!-- CONTENU PRINCIPAL (CENTRE + DROITE) -->
-        <main class="main-content">
-            <!-- 2. ZONE CENTRALE – APERÇU DU VÊTEMENT -->
-            <section class="preview-section">
-                <h1>Personnalisez votre pièce</h1>
+    <!-- CONTENU PRINCIPAL (CENTRE + DROITE) -->
+    <main class="main-content">
+        <!-- 2. ZONE CENTRALE – APERÇU DU VÊTEMENT -->
+        <section class="preview-section">
+            <h1>Personnalisez votre pièce</h1>
 
-                <div class="product-preview-wrapper">
-                    <!-- Zone produit (mockup + SVG + stickers) -->
-                    <div class="product-clip">
-                        <div class="product-container">
-                            <img id="product-image"
-                                 src="assets/test_svg/Teeshirt_face-02_Plan de travail 1.png"
-                                 alt="T-shirt face"
-                                 draggable="false">
-                            <svg id="product-svg"></svg>
-                        </div>
+            <div class="product-preview-wrapper">
+                <div class="product-clip">
+                    <div class="product-container">
+                        <img id="product-image"
+                             src="assets/models/png/PNG_export_402-03.png"
+                             alt="Vêtement"
+                             draggable="false">
+                        <svg id="product-svg"></svg>
                     </div>
                 </div>
+            </div>
 
-                <!-- Boutons FACE / DOS sous l’image -->
-                <div class="view-toggle">
-                    <button id="btn-face">Face</button>
-                    <button id="btn-dos">Dos</button>
+            <div class="view-toggle">
+                <button id="btn-face" type="button">Face</button>
+                <button id="btn-dos" type="button">Dos</button>
+            </div>
+        </section>
+
+        <!-- 3. ZONE DROITE – CONFIGURATION -->
+        <aside class="config-panel">
+            <!-- a. Informations produit -->
+            <section class="product-info">
+                <div class="brand-name">Bî You</div>
+                <h2 class="product-name">Personnalisation</h2>
+                <p class="product-description">
+                    Choisissez un vêtement, puis modifiez la couleur et ajoutez des stickers.
+                </p>
+            </section>
+
+            <!-- NOUVEAU : Choix du vêtement -->
+            <section class="config-section">
+                <h3>Vêtement</h3>
+                <div class="opacity-slider">
+                    <label for="product-select">Choisir un modèle</label>
+                    <select id="product-select">
+                        <option value="model1">Veston</option>
+                        <option value="model2">Veste courte</option>
+                        <option value="model3">Haut ample</option>
+                    </select>
                 </div>
             </section>
 
-            <!-- 3. ZONE DROITE – CONFIGURATION -->
-            <aside class="config-panel">
-                <!-- a. Informations produit -->
-                <section class="product-info">
-                    <div class="brand-name">Bî You</div>
-                    <h2 class="product-name">T‑shirt oversize unisexe</h2>
-                    <p class="product-description">
-                        T‑shirt oversize 100&nbsp;% coton bio, coupe mixte.
-                        Personnalisez la couleur et ajoutez vos stickers pour créer une pièce unique.
-                    </p>
-                </section>
+            <!-- b. Choix des couleurs -->
+            <section class="config-section">
+                <h3>Couleurs</h3>
+                <div class="color-palette">
+                    <div class="color" data-color="#1A1A1A" style="background-color:#1A1A1A;"></div>
+                    <div class="color" data-color="#7BA7A0" style="background-color:#7BA7A0;"></div>
+                    <div class="color" data-color="#F5F0E8" style="background-color:#F5F0E8;"></div>
+                    <div class="color" data-color="#C9A84C" style="background-color:#C9A84C;"></div>
+                    <div class="color" data-color="#C0392B" style="background-color:#C0392B;"></div>
+                </div>
+            </section>
 
-                <!-- b. Choix des couleurs -->
-                <section class="config-section">
-                    <h3>Couleurs</h3>
-                    <div class="color-palette">
-                        <div class="color" data-color="#1A1A1A" style="background-color:#1A1A1A;"></div>
-                        <div class="color" data-color="#7BA7A0" style="background-color:#7BA7A0;"></div>
-                        <div class="color" data-color="#F5F0E8" style="background-color:#F5F0E8;"></div>
-                        <div class="color" data-color="#C9A84C" style="background-color:#C9A84C;"></div>
-                        <div class="color" data-color="#C0392B" style="background-color:#C0392B;"></div>
+            <!-- Slider d'opacité lié à la couleur -->
+            <section class="config-section">
+                <h3>Opacité</h3>
+                <div class="opacity-slider">
+                    <label for="opacity">Opacité de la couleur</label>
+                    <input id="opacity" type="range" min="0.1" max="1" step="0.1" value="1">
+                </div>
+            </section>
+
+            <!-- choix des motifs -->
+            <section class="config-section">
+                <h3>Motifs</h3>
+
+                <div class="motifs-list">
+                    <button id="motif-none" class="btn-secondary" type="button">Aucun</button>
+
+                    <img
+                    src="assets/motifs/motif_1.png"
+                    class="motif-thumb"
+                    data-motif-src="assets/motifs/motif_1.png"
+                    alt="Motif 1">
+
+                    <img
+                    src="assets/motifs/motif_2.png"
+                    class="motif-thumb"
+                    data-motif-src="assets/motifs/motif_2.png"
+                    alt="Motif 2">
+
+                    <img
+                    src="assets/motifs/motif_3.png"
+                    class="motif-thumb"
+                    data-motif-src="assets/motifs/motif_3.png"
+                    alt="Motif 3">
+                </div>
+            </section>
+
+            <!-- c. Stickers -->
+            <section class="config-section">
+                <h3>Stickers</h3>
+                <div class="stickers-panel">
+                    <div class="stickers-list">
+                        <img src="assets/stickers/Fichier 1.png"
+                             class="sticker-thumb"
+                             data-sticker-src="assets/stickers/Fichier 1.png"
+                             alt="Sticker 1">
+                        <img src="assets/stickers/Fichier 2.png"
+                             class="sticker-thumb"
+                             data-sticker-src="assets/stickers/Fichier 2.png"
+                             alt="Sticker 2">
+                        <img src="assets/stickers/Fichier 4.png"
+                             class="sticker-thumb"
+                             data-sticker-src="assets/stickers/Fichier 4.png"
+                             alt="Sticker 4">
+                        <img src="assets/stickers/Fichier 5.png"
+                             class="sticker-thumb"
+                             data-sticker-src="assets/stickers/Fichier 5.png"
+                             alt="Sticker 5">
+                        <img src="assets/stickers/Fichier 6.png"
+                             class="sticker-thumb"
+                             data-sticker-src="assets/stickers/Fichier 6.png"
+                             alt="Sticker 6">
                     </div>
-                </section>
+                </div>
 
-                <!-- Slider d'opacité lié à la couleur -->
-                <section class="config-section">
-                    <h3>Opacité</h3>
-                    <div class="opacity-slider">
-                        <label for="opacity">Opacité du motif</label>
-                        <input id="opacity" type="range" min="0.1" max="1" step="0.1" value="1">
-                    </div>
-                </section>
+                <div class="sticker-actions">
+                    <button id="reset-stickers" class="btn-secondary" type="button">
+                        Réinitialiser les stickers
+                    </button>
+                    <button id="delete-sticker" class="btn-icon" type="button" title="Supprimer le sticker sélectionné">
+                        🗑
+                    </button>
+                </div>
+            </section>
 
-                <!-- c. Stickers -->
-                <section class="config-section">
-                    <h3>Stickers</h3>
-                    <div class="stickers-panel">
-                        <div class="stickers-list">
-                            <!-- Vignettes de stickers (utilisées par sticker.js) -->
-                            <img src="assets/stickers/Fichier 1.png"
-                                 class="sticker-thumb"
-                                 data-sticker-src="assets/stickers/Fichier 1.png"
-                                 alt="Sticker 1">
-                            <img src="assets/stickers/Fichier 2.png"
-                            class="sticker-thumb"
-                            data-sticker-src="assets/stickers/Fichier 2.png"
-                            alt="Sticker 2">
-                            <img src="assets/stickers/Fichier 4.png"
-                                 class="sticker-thumb"
-                                 data-sticker-src="assets/stickers/Fichier 4.png"
-                                 alt="Sticker 4">
-                            <img src="assets/stickers/Fichier 5.png"
-                                 class="sticker-thumb"
-                                 data-sticker-src="assets/stickers/Fichier 5.png"
-                                 alt="Sticker 5">
-                            <img src="assets/stickers/Fichier 6.png"
-                                 class="sticker-thumb"
-                                 data-sticker-src="assets/stickers/Fichier 6.png"
-                                 alt="Sticker 6">
-                            
-                        </div>
-                    </div>
+            <section class="config-section">
+                <button class="add-to-cart" type="button">Ajouter au panier</button>
+            </section>
+        </aside>
+    </main>
+</div>
 
-                    <!-- Boutons gestion des stickers -->
-                    <div class="sticker-actions">
-                        <button id="reset-stickers" class="btn-secondary">
-                            Réinitialiser les stickers
-                        </button>
-                        <button id="delete-sticker" class="btn-icon" title="Supprimer le sticker sélectionné">
-                            🗑
-                        </button>
-                    </div>
-                </section>
-                </section>
-
-                <!-- Bouton Ajouter au panier -->
-                <section class="config-section">
-                    <button class="add-to-cart">Ajouter au panier</button>
-                </section>
-            </aside>
-        </main>
-    </div>
-
-    <!-- Scripts -->
-    <script src="script/color.js"></script>
-    <script src="script/sticker.js"></script>
+<!-- Scripts -->
+<script src="script/color.js"></script>
+<script src="script/sticker.js"></script>
 </body>
 </html>

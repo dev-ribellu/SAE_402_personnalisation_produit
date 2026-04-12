@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Bî You — Fabienne Verdier</title>
+
+  <!-- Design system existant -->
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/fb.css" />
+
+  <!-- Petit helper pour afficher les images en background via data-img -->
+  <style>
+    .fv-has-img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .fv-has-img > span { display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="page-layout">
+    <!-- =========================================================
+      SIDEBAR — identique aux autres pages
+    ========================================================= -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span>Bî You</span>
+      </div>
+
+      <nav class="main-nav">
+        <a href="home.html" class="nav-item">Accueil</a>
+        <a href="index.html" class="nav-item">Personnalisation</a>
+        <a href="actions.html" class="nav-item">Nos actions</a>
+        <a href="fb.html" class="nav-item active">Fabienne Verdier</a>
+        <a href="#" class="nav-item">Accessoires</a>
+      </nav>
+    </aside>
+
+    <main class="fv-main">
+      <!-- =========================================================
+        1) HERO — OUVERTURE CINÉMATIQUE
+      ========================================================= -->
+      <header class="fv-hero" id="top">
+        <!-- Image full bleed + overlay gradient (géré par fb.css via ::after) -->
+        <figure
+          class="fv-hero__image fv-placeholder"
+          data-img="assets/fb/header.png"
+          aria-label="Fabienne Verdier — ouverture cinématique">
+          <span>[ Image — Fabienne Verdier ]</span>
+        </figure>
+
+        <div class="fv-hero__content">
+          <h1 class="fv-h1 fv-hero__title">Fabienne Verdier</h1>
+          <p class="fv-optima-italic fv-hero__subtitle">Passagère du silence</p>
+          <p class="fv-cormorant-italic fv-hero__poem">
+            De Paris à Chengdu — le geste comme langage universel.
+          </p>
+        </div>
+
+        <a class="fv-scrollHint" href="#parcours" aria-label="Aller à Son Parcours">↓</a>
+      </header>
+
+      <!-- =========================================================
+        2) QUI EST FABIENNE VERDIER ? — SON PARCOURS
+      ========================================================= -->
+      <section class="fv-section fv-pad" id="parcours" aria-label="Qui est Fabienne Verdier ?">
+        <div class="fv-split">
+          <!-- Image slide-in depuis la gauche -->
+          <figure
+            class="fv-placeholder fv-portrait fv-slide-left"
+            data-img="assets/fb/portrait.png"
+            aria-label="Portrait éditorial de Fabienne Verdier">
+            <span>[ Image — Portrait vertical ]</span>
+          </figure>
+
+          <!-- Texte slide-in depuis la droite -->
+          <article class="fv-slide-right">
+            <h2 class="fv-h2">Son Parcours</h2>
+
+            <div class="fv-text fv-cormorant">
+              <p>Née à Paris en 1962.</p>
+              <p>
+                Elle étudie à l’École des Beaux‑Arts de Toulouse, puis au Sichuan Fine Arts Institute
+                de Chengdu, en Chine, où elle demeure dix ans.
+              </p>
+              <p>
+                Auprès de maîtres — parmi les derniers dépositaires d’une tradition en voie de disparition —
+                elle apprend la calligraphie chinoise et la peinture à l’encre, jusqu’à en maîtriser
+                la discipline, le silence et l’exigence.
+              </p>
+              <p>
+                De retour en France, elle développe une pratique singulière : une rencontre entre la peinture
+                occidentale et une philosophie du geste héritée de l’Orient.
+              </p>
+              <p>
+                Elle est connue pour ses toiles monumentales et ses pinceaux géants, fabriqués notamment
+                en crin de cheval, parfois longs de plusieurs mètres.
+              </p>
+              <p>
+                En 2003, elle publie <span class="fv-cormorant-italic">Passagère du silence</span>
+                (Albin Michel), récit mémoriel de ses années en Chine — apprentissage, isolement, métamorphose.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        3) SA PHILOSOPHIE / SA VISION — section sombre
+      ========================================================= -->
+      <section class="fv-section fv-dark fv-pad" id="vision" aria-label="Philosophie et vision">
+        <div class="fv-quoteBlock">
+          <blockquote class="fv-cormorant-italic fv-pullquote fv-reveal">
+            “Le geste précède la pensée.<br />
+            La trace est déjà une décision.”
+          </blockquote>
+
+          <div class="fv-sep fv-reveal" aria-hidden="true"></div>
+
+          <p class="fv-cormorant fv-darkText fv-reveal">
+            Chez Verdier, le geste est l’acte premier — avant l’intention. Le corps s’engage entièrement,
+            et la peinture devient un événement : respiration, poids, vitesse, résistance de la matière.
+            Sa pratique porte l’empreinte d’une influence zen et taoïste, où l’on cherche moins à “composer”
+            qu’à laisser émerger une justesse. Entre abstraction occidentale et calligraphie orientale,
+            son œuvre crée un pont : deux civilisations, une même nécessité de présence.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        4) SON ŒUVRE — galerie éditoriale
+      ========================================================= -->
+      <section class="fv-section fv-pad" id="oeuvres" aria-label="Œuvres et séries">
+        <header class="fv-worksHeader fv-reveal">
+          <h2 class="fv-h2 fv-worksTitle">Œuvres &amp; Séries</h2>
+        </header>
+
+        <div class="fv-grid">
+          <!-- 1 -->
+          <figure class="fv-card fv-span-6 fv-reveal" aria-label="L'Essence des fleurs, 2002">
+            <div
+              class="fv-card__media fv-placeholder fv-ratio-landscape"
+              data-img="assets/fb/essencedesfleurs.png">
+              <span>[ Image ]</span>
+            </div>
+            <figcaption class="fv-card__label fv-optima-italic">L'Essence des fleurs, 2002</figcaption>
+          </figure>
+
+          <!-- 2 -->
+          <figure class="fv-card fv-span-6 fv-reveal" aria-label="Table d'harmonie II, 2016">
+            <div
+              class="fv-card__media fv-placeholder fv-ratio-landscape"
+              data-img="assets/fb/tabledharmonie.png">
+              <span>[ Image ]</span>
+            </div>
+            <figcaption class="fv-card__label fv-optima-italic">Table d'harmonie II, 2016</figcaption>
+          </figure>
+
+          <!-- 3 -->
+          <figure class="fv-card fv-span-4 fv-reveal" aria-label="Prunus écarlate">
+            <div
+              class="fv-card__media fv-placeholder fv-ratio-portrait"
+              data-img="assets/fb/prunusecarlate.png">
+              <span>[ Image ]</span>
+            </div>
+            <figcaption class="fv-card__label fv-optima-italic">Prunus écarlate</figcaption>
+          </figure>
+
+          <!-- 4 -->
+          <figure class="fv-card fv-span-4 fv-reveal" aria-label="Sustain">
+            <div
+              class="fv-card__media fv-placeholder fv-ratio-portrait"
+              data-img="assets/fb/sustain.png">
+              <span>[ Image ]</span>
+            </div>
+            <figcaption class="fv-card__label fv-optima-italic">Sustain</figcaption>
+          </figure>
+
+          <!-- 5 -->
+          <figure class="fv-card fv-span-4 fv-reveal" aria-label="Calligraphie gestuelle — série noire">
+            <div
+              class="fv-card__media fv-placeholder fv-ratio-portrait"
+              data-img="assets/fb/calligraphie gestuele.png">
+              <span>[ Image ]</span>
+            </div>
+            <figcaption class="fv-card__label fv-optima-italic">Calligraphie gestuelle — série noire</figcaption>
+          </figure>
+
+          <!-- 6 -->
+          <figure class="fv-card fv-span-12 fv-reveal" aria-label="Grande coulée — encre sur toile">
+            <div
+              class="fv-card__media fv-placeholder fv-ratio-wide"
+              data-img="assets/fb/grandecoulée.png">
+              <span>[ Image ]</span>
+            </div>
+            <figcaption class="fv-card__label fv-optima-italic">Grande coulée — encre sur toile</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        5) PASSAGÈRE DU SILENCE — le livre (split inversé)
+      ========================================================= -->
+      <section class="fv-section fv-pad" id="livre" aria-label="Passagère du Silence — le livre">
+        <div class="fv-split fv-split--reverse">
+          <!-- Texte (gauche) -->
+          <article class="fv-slide-left">
+            <h2 class="fv-h2 fv-underline">Passagère du Silence</h2>
+            <p class="fv-optima-italic" style="margin:10px 0 14px 0; color: var(--or-laque); letter-spacing:0.10em;">
+              Albin Michel, 2003
+            </p>
+
+            <div class="fv-text fv-cormorant">
+              <p>
+                <span class="fv-cormorant-italic">Passagère du silence</span> est un récit fondateur publié en 2003.
+                Il retrace dix années en Chine : l’apprentissage, l’isolement, la rigueur — et la transformation.
+              </p>
+              <p>
+                Plus qu’un témoignage, c’est une traversée : la manière dont une discipline du geste
+                devient une manière d’être au monde.
+              </p>
+              <p>
+                Pour Bî You, ce texte est une source : le point d’origine d’un univers créatif où l’on porte
+                une philosophie — pas un simple motif. Ce n’est pas une collaboration : c’est une interprétation.
+              </p>
+
+              <button class="fv-cta" type="button">Découvrir le livre</button>
+            </div>
+          </article>
+
+          <!-- Couverture (droite) -->
+          <figure
+            class="fv-placeholder fv-bookCover fv-slide-right"
+            data-img="assets/fb/passagèredusilence.png"
+            aria-label="Couverture du livre Passagère du silence">
+            <span>[ Image — Couverture ]</span>
+          </figure>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        6) VERDIER & BÎ YOU — lien avec la marque (céladon)
+      ========================================================= -->
+      <section class="fv-section fv-celadon fv-pad" id="lien" aria-label="Lien entre Verdier et Bî You">
+        <div class="fv-center">
+          <h2 class="fv-h2 fv-reveal" style="color: var(--noir-encre);">
+            L'œuvre de Verdier au cœur de Bî You
+          </h2>
+
+          <p class="fv-cormorant fv-reveal" style="margin-top: 14px;">
+            Bî You est né d’un univers artistique : traduire une pensée du geste en vêtement, faire de l’encre
+            une matière portable, et de la collection une lecture. Chaque série s’inspire d’œuvres ou de cycles
+            précis — non pour reproduire, mais pour interpréter : porter une philosophie.
+          </p>
+
+          <div class="fv-icons" id="fv-icons">
+            <div class="fv-iconBlock" data-stagger data-delay="0">
+              <div class="fv-icon">[ ]</div>
+              <h3 class="fv-iconTitle">Le Geste</h3>
+              <p class="fv-iconLine">Une présence : rythme, souffle, décision.</p>
+            </div>
+
+            <div class="fv-iconBlock" data-stagger data-delay="140">
+              <div class="fv-icon">[ ]</div>
+              <h3 class="fv-iconTitle">L'Encre</h3>
+              <p class="fv-iconLine">Une matière vivante, profonde, vibrante.</p>
+            </div>
+
+            <div class="fv-iconBlock" data-stagger data-delay="280">
+              <div class="fv-icon">[ ]</div>
+              <h3 class="fv-iconTitle">La Transmission</h3>
+              <p class="fv-iconLine">Apprendre, faire, partager le regard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        7) CITATION FINALE — FERMETURE
+      ========================================================= -->
+      <section class="fv-final" id="final" aria-label="Citation finale">
+        <div class="fv-final__inner">
+          <blockquote class="fv-cormorant-italic fv-finalQuote">
+            “Je ne peins pas des formes.<br />
+            Je peins des forces.”
+          </blockquote>
+          <p class="fv-finalCredit">— Fabienne Verdier</p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        8) FOOTER
+      ========================================================= -->
+      <footer class="fv-footer">
+        <p>© Bî You — Fabienne Verdier</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Applique les images aux placeholders via data-img (comme sur actions)
+    document.querySelectorAll('[data-img]').forEach(el => {
+      const url = el.getAttribute('data-img');
+      if (!url) return;
+      el.style.backgroundImage = `url("${url}")`;
+      el.classList.add('fv-has-img');
+    });
+
+    // Smooth scroll (anchors)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // IntersectionObserver — reveals / slides
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      }
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fv-reveal, .fv-slide-left, .fv-slide-right').forEach(el => io.observe(el));
+
+    // Stagger (icônes) — delay par data-delay
+    const iconBlocks = document.querySelectorAll('[data-stagger]');
+    const ioStagger = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const el = entry.target;
+        const delay = Number(el.getAttribute('data-delay') || 0);
+        el.style.transitionDelay = delay + 'ms';
+        el.classList.add('is-visible');
+      }
+    }, { threshold: 0.22 });
+
+    iconBlocks.forEach(el => ioStagger.observe(el));
+  </script>
+</body>
+</html>

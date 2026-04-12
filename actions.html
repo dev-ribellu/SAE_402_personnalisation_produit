@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Bî You — Nos Actions</title>
+
+  <!-- Design system existant -->
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/actions.css" />
+</head>
+
+<body>
+  <div class="page-layout">
+    <!-- NAVBAR GAUCHE (même structure que home) -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span>Bî You</span>
+      </div>
+
+      <nav class="main-nav">
+        <a href="home.html" class="nav-item">Accueil</a>
+        <a href="index.html" class="nav-item">Personnalisation</a>
+        <a href="actions.html" class="nav-item active">Nos actions</a>
+        <a href="fb.html" class="nav-item">Fabienne Verdier</a>
+        <a href="#" class="nav-item">Accessoires</a>
+      </nav>
+    </aside>
+
+    <main class="na-main">
+      <!-- =========================================================
+           1) HERO SECTION (plein écran + parallax)
+           ========================================================= -->
+      <header class="na-hero" id="top">
+        <!-- Image éditoriale en background (remplacée via data-img) -->
+        <div
+          class="na-hero__bg na-placeholder na-parallax"
+          data-parallax="0.18"
+          data-img="assets/actions/header.jpg"
+          aria-hidden="true">
+          <span>[ Image ]</span>
+        </div>
+
+        <div class="na-hero__content reveal">
+          <h1 class="na-hero__title">Nos Actions</h1>
+          <p class="na-hero__subtitle">Une marque qui agit, une création qui engage.</p>
+        </div>
+
+        <a class="na-scrollHint" href="#studio" aria-label="Aller à Bî Studio">
+          <span aria-hidden="true"></span>
+          Découvrir
+        </a>
+      </header>
+
+      <!-- =========================================================
+           2) SECTION — BÎ STUDIO (image gauche, texte droite)
+           Texte slide-in depuis la droite au scroll
+           ========================================================= -->
+      <section class="na-section na-split" id="studio" aria-labelledby="studio-title">
+        <figure class="na-media reveal">
+          <div
+            class="na-media__box na-placeholder"
+            data-img="assets/actions/Bî_stdio.png">
+            <span>[ Image ]</span>
+          </div>
+        </figure>
+
+        <article class="na-copy na-slide-right" aria-label="Présentation Bî Studio">
+          <h2 id="studio-title" class="na-h2">Bî Studio</h2>
+          <p class="na-p">
+            Bî Studio est un programme de collaboration avec des écoles d’art : briefs créatifs,
+            expérimentations, et production de séries inspirées par le geste.
+          </p>
+          <p class="na-p">
+            Les étudiant·e·s travaillent des contraintes (matière, rythme, composition),
+            puis transposent leurs recherches en motifs, gammes colorées et propositions de pièces.
+          </p>
+          <p class="na-p">
+            L’objectif : faire dialoguer création contemporaine et vestiaire, en gardant une ligne
+            nette et éditoriale.
+          </p>
+        </article>
+      </section>
+
+      <!-- =========================================================
+           3) SECTION — BÎ HOUSE (texte gauche, image droite)
+           Texte slide-in depuis la gauche au scroll
+           ========================================================= -->
+      <section class="na-section na-split na-split--reverse" id="house" aria-labelledby="house-title">
+        <article class="na-copy na-slide-left" aria-label="Présentation Bî House">
+          <h2 id="house-title" class="na-h2">Bî House</h2>
+          <p class="na-p">
+            Bî House est un lieu hybride : boutique, espace muséal autour de Verdier, atelier
+            et salon de thé. Une manière de réunir vêtement, œuvre et expérience.
+          </p>
+          <p class="na-p">
+            On y découvre les collections, les inspirations, les pièces en cours, et des moments
+            de transmission (démonstrations, rencontres, mini‑workshops).
+          </p>
+          <p class="na-p">
+            Un espace pour voir, toucher, comprendre — et participer.
+          </p>
+        </article>
+
+        <figure class="na-media reveal">
+          <div
+            class="na-media__box na-placeholder"
+            data-img="assets/actions/Bî_House.png">
+            <span>[ Image ]</span>
+          </div>
+        </figure>
+      </section>
+
+      <!-- =========================================================
+           4) SECTION — ATELIERS & ÉVÉNEMENTS (scroll horizontal)
+           ========================================================= -->
+      <section class="na-section na-events" id="events" aria-labelledby="events-title">
+        <header class="na-section__header reveal">
+          <h2 id="events-title" class="na-h2">Ateliers &amp; Événements</h2>
+          <p class="na-lead">Une grille éditoriale inspirée Zara : cartes horizontales, à explorer.</p>
+        </header>
+
+        <div class="na-cards" id="events-row" role="list" aria-label="Liste des ateliers et événements">
+          <article class="na-card" role="listitem">
+            <div class="na-card__media na-placeholder" data-img="assets/actions/calligraphie.png">
+              <span>[ Image ]</span>
+            </div>
+            <div class="na-card__body">
+              <h3 class="na-h3">Atelier Calligraphie</h3>
+              <p class="na-small">Découvrir le trait, le souffle, et la répétition du geste.</p>
+            </div>
+          </article>
+
+          <article class="na-card" role="listitem">
+            <div class="na-card__media na-placeholder" data-img="assets/actions/matières.png">
+              <span>[ Image ]</span>
+            </div>
+            <div class="na-card__body">
+              <h3 class="na-h3">Teinture &amp; Matières</h3>
+              <p class="na-small">Couleurs, bains, essais : la matière devient surface vivante.</p>
+            </div>
+          </article>
+
+          <article class="na-card" role="listitem">
+            <div class="na-card__media na-placeholder" data-img="assets/actions/dessin_gestuel.png">
+              <span>[ Image ]</span>
+            </div>
+            <div class="na-card__body">
+              <h3 class="na-h3">Dessin Gestuel</h3>
+              <p class="na-small">Composer par mouvement : lignes, masses, rythmes.</p>
+            </div>
+          </article>
+
+          <article class="na-card" role="listitem">
+            <div class="na-card__media na-placeholder" data-img="assets/actions/talk.png">
+              <span>[ Image ]</span>
+            </div>
+            <div class="na-card__body">
+              <h3 class="na-h3">Rencontre / Talk</h3>
+              <p class="na-small">Échanges autour de la création et des séries en cours.</p>
+            </div>
+          </article>
+
+          <article class="na-card" role="listitem">
+            <div class="na-card__media na-placeholder" data-img="assets/actions/open_studio.webp">
+              <span>[ Image ]</span>
+            </div>
+            <div class="na-card__body">
+              <h3 class="na-h3">Open Studio</h3>
+              <p class="na-small">Voir le processus : du geste au motif, du motif à la pièce.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           5) SECTION — PASSAGÈRES (série vidéo) fond sombre
+           (pas de vidéo pour l’instant : on met video.png)
+           ========================================================= -->
+      <section class="na-section na-video" id="passageres" aria-labelledby="video-title">
+        <div class="na-video__inner">
+          <header class="reveal">
+            <h2 id="video-title" class="na-h2 na-h2--light">Passagères</h2>
+          </header>
+
+          <figure class="na-video__frame reveal" aria-label="Placeholder vidéo">
+            <div
+              class="na-video__placeholder na-placeholder"
+              data-img="assets/actions/video.png">
+              <span>[ Vidéo 16:9 ]</span>
+            </div>
+
+            <button class="na-play" type="button" aria-label="Lire la vidéo (placeholder)">
+              ▶
+            </button>
+          </figure>
+
+          <p class="na-video__desc reveal">
+            Une série vidéo courte : portraits, gestes, matières.
+            Un format “cinéma” pour raconter la création sans l’expliquer.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           6) SECTION — TIMELINE / ROADMAP (M+1 -> M+12)
+           ========================================================= -->
+      <section class="na-section na-timeline" id="roadmap" aria-labelledby="roadmap-title">
+        <header class="na-section__header reveal">
+          <h2 id="roadmap-title" class="na-h2">Timeline / Roadmap</h2>
+          <p class="na-lead">Les jalons clés du plan d’action, de M+1 à M+12.</p>
+        </header>
+
+        <div class="na-timeline__track" aria-label="Timeline verticale">
+          <article class="na-milestone na-milestone--left na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+1</h3>
+              <p class="na-small">Lancement des briefs écoles (Bî Studio) + cadrage des ateliers.</p>
+            </div>
+          </article>
+
+          <article class="na-milestone na-milestone--right na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+2</h3>
+              <p class="na-small">Premières expérimentations : séries de gestes &amp; surfaces.</p>
+            </div>
+          </article>
+
+          <article class="na-milestone na-milestone--left na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+3</h3>
+              <p class="na-small">Prototype des motifs + tests sur pièces (couleurs / matières).</p>
+            </div>
+          </article>
+
+          <article class="na-milestone na-milestone--right na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+4</h3>
+              <p class="na-small">Calendrier ateliers publics + sélection d’intervenant·e·s.</p>
+            </div>
+          </article>
+
+          <article class="na-milestone na-milestone--left na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+6</h3>
+              <p class="na-small">Ouverture progressive du programme Bî House (espace &amp; parcours).</p>
+            </div>
+          </article>
+
+          <article class="na-milestone na-milestone--right na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+9</h3>
+              <p class="na-small">Série vidéo Passagères : captations + diffusion éditoriale.</p>
+            </div>
+          </article>
+
+          <article class="na-milestone na-milestone--left na-timeline-item" data-io>
+            <div class="na-milestone__dot" aria-hidden="true"></div>
+            <div class="na-milestone__card">
+              <h3 class="na-h3">M+12</h3>
+              <p class="na-small">Bilan : exposition des séries + restitution des collaborations.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="na-footer">
+        <p>© Bî You — Nos actions</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script/actions.js"></script>
+</body>
+</html>
