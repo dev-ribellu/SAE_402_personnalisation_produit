@@ -108,22 +108,41 @@ a:hover {
     margin-bottom: 24px;
 }
 
+/* Wrapper : autorise un aperçu plus large sur grands écrans */
 .product-preview-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
+    width: 100%;
 }
 
-/* Conteneur mockup + stickers */
+/* Clip : définit une "fenêtre" de taille responsive pour image + SVG */
+.product-clip {
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: visible; /* coupe les stickers qui dépassent */
+    
+    width: min(70%, 900px);
+    height: clamp(360px, 60vh, 700px);
+    margin-inline: auto;
+}
+
+/* Conteneur mockup + stickers (image + svg) */
 .product-container {
     position: relative;
-    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px; /* augmente la taille max vs 420px */
+    margin-inline: auto;
 }
 
 /* Image du vêtement */
 #product-image {
     width: 100%;
+    height: 100%;
+    object-fit: contain; /* garde les proportions */
     display: block;
 }
 
@@ -137,6 +156,19 @@ a:hover {
     opacity: 1;
     transition: opacity 0.3s ease;
     mix-blend-mode: multiply;
+    overflow: visible;
+}
+
+/* Ajustement très grands écrans */
+@media (min-width: 1400px) {
+    .product-clip {
+        width: min(85%, 1050px);
+        height: clamp(440px, 65vh, 820px);
+    }
+
+    .product-container {
+        max-width: 800px;
+    }
 }
 
 /* Boutons FACE / DOS */
@@ -147,6 +179,14 @@ a:hover {
 }
 
 .view-toggle button {
+    display: inline-flex;
+    gap: 8px;
+    margin-top: 8px;
+
+    /* ↓ centre le bloc de boutons sous l’aperçu */
+    justify-content: center;
+    width: 100%;
+    
     padding: 8px 18px;
     border: 1px solid #111;
     background-color: #fff;
@@ -242,6 +282,7 @@ a:hover {
 .opacity-slider input[type="range"] {
     width: 100%;
 }
+
 #product-select {
     width: 100%;
     padding: 8px 10px;
@@ -291,6 +332,7 @@ a:hover {
     border-radius: 50%;
     background-color: #fff;
 }
+
 .motifs-list {
   display: flex;
   gap: 8px;
@@ -329,6 +371,7 @@ a:hover {
     background-color: #fff;
     color: #111;
 }
+
 .sticker-actions {
     display: flex;
     gap: 8px;
@@ -379,16 +422,4 @@ a:hover {
 .sticker-instance.selected {
     outline: 2px dashed #111;
     outline-offset: 2px;
-}
-.product-clip {
-    position: relative;
-    display: inline-block;
-    overflow: hidden; /* coupe les stickers qui dépassent */
-}
-
-/* Conteneur mockup + stickers */
-.product-container {
-    position: relative;
-    max-width: 420px;
-    width: 100%;
 }
